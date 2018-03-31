@@ -1,5 +1,4 @@
 import Html exposing (..)
-import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Movies exposing (..)
 import List exposing (..)
