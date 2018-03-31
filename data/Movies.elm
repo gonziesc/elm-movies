@@ -1,20 +1,6 @@
 module Movies exposing (..)
-import Image exposing (Image)
+import Types exposing (..)
 
-type alias Movie = {
-  id: Int,
-  poster : Image,
-  title: String,
-  rating: Float,
-  genre: List String,
-  link: String
-}
-
-type alias Image = {
-  url : String,
-  width : Int,
-  height : Int
-}
 
 --MOVIES
 moviesCollection : List Movie
