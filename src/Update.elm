@@ -1,6 +1,7 @@
 module Update exposing(..)
 import Msg exposing(..)
 import Models exposing(..)
+import Backend exposing(..)
 
 update : Msg -> Model -> Model
 update msg model =
@@ -13,3 +14,6 @@ update msg model =
 
     Reset ->
       {model | movies = moviesCollection}
+
+    FilterName name -> 
+      {model | movies = filterMoviesByName name model.movies}
