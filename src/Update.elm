@@ -17,3 +17,5 @@ update msg model =
 
     FilterName name -> 
       {model | movies = filterMoviesByName name model.movies}
+    IncrementLikes movieId ->
+      {model | movies = incrementLikes movieId model.movies}

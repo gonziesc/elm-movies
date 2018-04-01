@@ -14,5 +14,7 @@ moviePortrait movie =
       a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
     , div [Styles.title] [text (movie.title)]
     , div [Styles.title] [text (toString(movie.rating))]
+    , div [Styles.title] [text (toString(movie.likes))]
+    , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
     , button [ Styles.removeBtn, onClick (Remove movie) ] [ text "Remove" ]
     ]
