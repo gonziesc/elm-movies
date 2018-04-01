@@ -19,3 +19,7 @@ update msg model =
       {model | movies = filterMoviesByName name model.movies}
     IncrementLikes movieId ->
       {model | movies = incrementLikes movieId model.movies}
+    ShowDialog ->
+      {model | shouldShowDialog = True}
+    HideDialog ->
+      {model | shouldShowDialog = False}

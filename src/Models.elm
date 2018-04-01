@@ -16,7 +16,7 @@ type alias Image = {
   height : Int
 }
 
-type alias Model = {movies : List Movie}
+type alias Model = {movies : List Movie, shouldShowDialog: Bool}
 
 
 --MOVIES
@@ -40,4 +40,4 @@ createPoster : String -> Image
 createPoster imageUrl = { url= imageUrl, width= 400, height= 400 }
 
 initialModel : Model
-initialModel = { movies = moviesCollection }
+initialModel = { movies = moviesCollection, shouldShowDialog = False }
