@@ -17,12 +17,12 @@ type alias Image = {
 }
 
 type alias Preferences = {
-  keywords: List String,
-  genre: String,
-  favoriteActor: String
+  keywords: Maybe (List String),
+  genre: Maybe String,
+  favoriteActor: Maybe String
 }
 
-type alias Model = {movies : List Movie, shouldShowDialog: Bool, preferences: Maybe Preferences}
+type alias Model = {movies : List Movie, shouldShowDialog: Bool, preferences: Preferences}
 
 
 --MOVIES
@@ -46,4 +46,4 @@ createPoster : String -> Image
 createPoster imageUrl = { url= imageUrl, width= 400, height= 400 }
 
 initialModel : Model
-initialModel = { movies = moviesCollection, shouldShowDialog = False, preferences = Maybe.Nothing }
+initialModel = { movies = moviesCollection, shouldShowDialog = False, preferences = Preferences Nothing Nothing Nothing }

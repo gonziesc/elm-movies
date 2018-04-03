@@ -8,4 +8,6 @@ type Msg = NoOp
     | IncrementLikes Int 
     | ShowDialog
     | HideDialog
-    | LoadPreferences String String String
+    | UpdatePreferencesKeywords String
+    | UpdatePreferencesGenre String
+    | UpdatePreferencesActor String 

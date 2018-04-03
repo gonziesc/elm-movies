@@ -17,23 +17,23 @@ preferencesModal model =
                , containerClass = Just "your-container-class"
                , header = Just (text "Preferences")
                , body = Just ( div [Styles.mainPage] [
-                        div[Styles.gallery] [input [ value (case model.preferences of 
+                        div[Styles.gallery] [input [ value (case model.preferences.keywords of 
                           Nothing -> 
                             "" 
-                          Just preferences -> 
-                            String.join " "preferences.keywords )  
+                          Just keywords -> 
+                            String.join " " keywords )  
                         ,placeholder "enter your keywords separated with a space"] [],
-                        input [ value (case model.preferences of 
+                        input [ value (case model.preferences.genre of 
                           Nothing -> 
                             "" 
-                          Just preferences -> 
-                            preferences.genre )  
+                          Just genre -> 
+                            genre )  
                         ,placeholder "enter your favorite genre"] [],
-                        input [ value (case model.preferences of 
+                        input [ value (case model.preferences.favoriteActor of 
                           Nothing -> 
                             "" 
-                          Just preferences -> 
-                            preferences.favoriteActor )  
+                          Just actor -> 
+                            actor )  
                         ,placeholder "enter your favorite actor"] [],
                          button [ ] [ text "Add movie preferences" ]]
   ])
