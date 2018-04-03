@@ -23,3 +23,5 @@ update msg model =
       {model | shouldShowDialog = True}
     HideDialog ->
       {model | shouldShowDialog = False}
+    LoadPreferences keywords genre actor->
+      {model | preferences = Just (Preferences (String.split keywords " ") genre actor) }
