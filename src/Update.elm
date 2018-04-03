@@ -9,14 +9,11 @@ update msg model =
     NoOp ->
       model
 
-    Remove movie ->
-      {model | movies = List.filter (\x -> x.id /= movie.id) model.movies}
-
     Reset ->
       {model | movies = moviesCollection}
 
-    FilterName name -> 
-      {model | movies = filterMoviesByName name model.movies}
+    FilterName name ->
+      {model | movies = filterMoviesByName name moviesCollection}
     IncrementLikes movieId ->
       {model | movies = incrementLikes movieId model.movies}
     ShowDialog ->
