@@ -18,3 +18,5 @@ moviePortrait movie =
     , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
     , button [ Styles.removeBtn, onClick (Remove movie) ] [ text "Remove" ]
     ]
+moviePortraites : Model -> List (Html Msg)
+moviePortraites model = List.map moviePortrait model.movies

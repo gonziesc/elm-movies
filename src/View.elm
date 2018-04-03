@@ -15,6 +15,6 @@ view model =
       div[Styles.grandTitle] [text ("PdeP-Flix")]
     , div[Styles.gallery] [input [ placeholder "filter movies", onInput FilterName ] []
     , button [ Styles.resetBtn, onClick ShowDialog ] [ text "Add movie preferences" ]]
-    , div[Styles.gallery] (List.map moviePortrait model.movies)
+    , div[Styles.gallery] (moviePortraites model)
     , button [ Styles.resetBtn, onClick Reset ] [ text "Reset Gallery" ]
   ]
