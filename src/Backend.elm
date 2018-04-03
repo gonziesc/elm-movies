@@ -1,5 +1,5 @@
 module Backend exposing(..)
-import Models exposing(Movie)
+import Models exposing(Movie, Preferences)
 
 filterMoviesByName : String -> List Movie -> List Movie
 filterMoviesByName phrase = List.filter(\movie -> String.contains phrase movie.title)
@@ -9,3 +9,6 @@ incrementLikes id = List.map(\movie -> if movie.id == id then addLike movie else
 
 addLike : Movie -> Movie 
 addLike movie = {movie | likes = movie.likes + 1}
+
+calculateMatchPercentage : List Movie -> Preferences ->  List Movie 
+calculateMatchPercentage movies preferences = List.map(\movie -> {movie | matchPercentage =  String.length (preferences.keywords)}) movies

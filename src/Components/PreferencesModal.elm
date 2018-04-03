@@ -4,7 +4,7 @@ import Dialog exposing (..)
 import Models exposing (..)
 import Msg exposing(..)
 import Styles exposing (..)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing(..)
 
 preferencesModal : Model -> Html Msg
@@ -17,25 +17,15 @@ preferencesModal model =
                , containerClass = Just "your-container-class"
                , header = Just (text "Preferences")
                , body = Just ( div [Styles.mainPage] [
-                        div[Styles.gallery] [input [ value (case model.preferences.keywords of 
-                          Nothing -> 
-                            "" 
-                          Just keywords -> 
-                            String.join " " keywords )  
-                        ,placeholder "enter your keywords separated with a space"] [],
-                        input [ value (case model.preferences.genre of 
-                          Nothing -> 
-                            "" 
-                          Just genre -> 
-                            genre )  
-                        ,placeholder "enter your favorite genre"] [],
-                        input [ value (case model.preferences.favoriteActor of 
-                          Nothing -> 
-                            "" 
-                          Just actor -> 
-                            actor )  
-                        ,placeholder "enter your favorite actor"] [],
-                         button [ ] [ text "Add movie preferences" ]]
+                        div[Styles.gallery] [input [ value model.preferences.keywords
+                        ,placeholder "enter your keywords separated with a space",
+                        onInput UpdatePreferencesKeywords] [],
+                        input [ value  model.preferences.genre 
+                        ,placeholder "enter your favorite genre",
+                        onInput UpdatePreferencesGenre] [],
+                        input [ value model.preferences.favoriteActor
+                        ,placeholder "enter your favorite actor",onInput UpdatePreferencesActor] [],
+                         button [ onClick MatchPercentage ] [ text "Add movie preferences" ]]
   ])
                , footer = Nothing
                }

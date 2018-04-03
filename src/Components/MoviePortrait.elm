@@ -15,6 +15,7 @@ moviePortrait movie =
     , div [Styles.title] [text (movie.title)]
     , div [Styles.title] [text (toString(movie.rating))]
     , div [Styles.title] [text (toString(movie.likes))]
+    , div [Styles.title] [text (toString(movie.matchPercentage))]
     , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
     , button [ Styles.removeBtn, onClick (Remove movie) ] [ text "Remove" ]
     ]

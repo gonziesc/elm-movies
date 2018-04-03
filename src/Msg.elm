@@ -11,3 +11,4 @@ type Msg = NoOp
     | UpdatePreferencesKeywords String
     | UpdatePreferencesGenre String
     | UpdatePreferencesActor String 
+    | MatchPercentage
