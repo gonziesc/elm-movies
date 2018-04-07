@@ -8,10 +8,11 @@ import Msg exposing(..)
 
 navbar : Html Msg
 navbar = 
-    nav[class "navbar navbar-dark bg-dark" ]
-    [
-        a [ class "navbar-brand", href "#" ] [ text "PdeP-Flix" ],
-        Form.formInline [] [
-            Input.text [ Input.attrs [class "mx-sm-3", placeholder "filter movies", onInput FilterName ]] 
-        ]
-    ]
+  nav[class "navbar navbar-dark bg-dark" ]
+  [
+    a [ class "navbar-brand", href "#" ] [ text "PdeP-Flix" ],
+      Form.formInline [] [
+        Input.text [ Input.attrs [class "mx-sm-3", placeholder "filter movies", onInput FilterName ]
+      ] 
+   ]
+ ]

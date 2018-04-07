@@ -16,19 +16,19 @@ import Bootstrap.Utilities.Spacing as Spacing
 
 view : Model -> Html Msg
 view model =
-    div []  [
-            CDN.stylesheet,
-            navbar,
-            preferencesModal model,
-            Grid.container [] [
-            br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
-            Grid.row [](moviePortraites model),
-            br [] [],
-            div []
-                [Button.button [ Button.success , Button.attrs [onClick Reset]] [ text "Reset Gallery" ]
-                , Button.button [ Button.success, Button.attrs [ Spacing.ml1, onClick ShowDialog ] ] [ text "Add movie preferences" ]
-                ]
-            ]
+  div []  [
+    CDN.stylesheet
+    navbar,
+    preferencesModal model,
+    Grid.container [] [
+      br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
+      Grid.row [](moviePortraites model),
+      br [] [],
+      div [] [
+        Button.button [ Button.success , Button.attrs [onClick Reset]] [ text "Reset Gallery" ],
+        Button.button [ Button.success, Button.attrs [ Spacing.ml1, onClick ShowDialog ] ] [ text "Add movie preferences" ]
+      ]
+    ]
 
-        ]
+  ]
                 
