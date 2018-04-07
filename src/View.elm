@@ -11,6 +11,8 @@ import Bootstrap.CDN as CDN
 import Bootstrap.Grid as Grid
 import Bootstrap.Form as Form
 import Bootstrap.Form.Input as Input
+import Bootstrap.Button as Button
+import Bootstrap.Utilities.Spacing as Spacing
 
 navbar : Html Msg
 navbar = 
@@ -22,6 +24,8 @@ navbar =
         ]
     ]
 
+
+
 view : Model -> Html Msg
 view model =
     div []  [
@@ -30,8 +34,13 @@ view model =
             preferencesModal model,
             Grid.container [] [
             br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
-                Grid.row [](moviePortraites model),
-            --div[] [ button [onClick ShowDialog ] [ text "Add movie preferences" ]  ],
-                button [onClick Reset ] [ text "Reset Gallery" ]
+            Grid.row [](moviePortraites model),
+            br [] [],
+            div []
+                [Button.button [ Button.success , Button.attrs [onClick Reset]] [ text "Reset Gallery" ]
+                , Button.button [ Button.success, Button.attrs [ Spacing.ml1, onClick ShowDialog ] ] [ text "Add movie preferences" ]
+                ]
+            ]
+
         ]
-    ]              
+                

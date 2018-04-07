@@ -70,3 +70,9 @@ title =
   style
     [ ("font-size", "30px")
     , ("margin-bottom", "5px")]
+
+likeButton =
+  style
+    [ ("margin-top", "5px"),
+    ("text-align", "center")
+    ]

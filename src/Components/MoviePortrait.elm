@@ -21,8 +21,8 @@ moviePortrait movie =
         , div [] [ h4 [] [ text (movie.title ++ " "), Badge.badgeSuccess [] [ text(toString(movie.rating))]]]
  --       , div [] [text ("Rating: " ++ toString(movie.rating))]
         , div [] [text ("Likes: " ++ toString(movie.likes))]
-        , div [] [text ("Match Percentage: " ++ toString(movie.matchPercentage))]
-        , Button.linkButton [ Button.outlineDanger, Button.attrs [ onClick <| IncrementLikes movie.id ]] [ text "❤️" ]
+        , div [] [text ("Match Percentage: " ++ toString(movie.matchPercentage) ++ "%")]
+        , div [Styles.likeButton] [Button.linkButton [ Button.outlineDanger, Button.attrs [onClick <| IncrementLikes movie.id ]] [ text "❤️" ]]
     ]
   
 
