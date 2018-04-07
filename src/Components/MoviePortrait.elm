@@ -6,17 +6,23 @@ import Models exposing (..)
 import Msg exposing(..)
 import Styles exposing (..)
 import Image exposing (Image)
+import Bootstrap.Grid as Grid
+import Bootstrap.Grid.Col as Col
+import Bootstrap.Grid.Row as Row 
 
 
-moviePortrait : Movie -> Html Msg
+moviePortrait : Movie -> Grid.Column Msg
 moviePortrait movie =
-  div [Styles.portrait] [
-      a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
-    , div [Styles.title] [text (movie.title)]
-    , div [Styles.title] [text (toString(movie.rating))]
-    , div [Styles.title] [text (toString(movie.likes))]
-    , div [Styles.title] [text (toString(movie.matchPercentage))]
-    , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
+
+    Grid.col [] [
+          a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
+        , div [] [text (movie.title)]
+        , div [] [text (toString(movie.rating))]
+        , div [] [text (toString(movie.likes))]
+        , div [] [text (toString(movie.matchPercentage))]
+        , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
     ]
-moviePortraites : Model -> List (Html Msg)
+  
+
+moviePortraites : Model -> List (Grid.Column Msg)
 moviePortraites model = List.map moviePortrait model.movies

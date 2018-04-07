@@ -27,12 +27,10 @@ view model =
     div []  [
             CDN.stylesheet,
             navbar,
-            Grid.container [] [
             preferencesModal model,
-            div[] [
-                button [onClick ShowDialog ] [ text "Add movie preferences" ]
-            ],
-            div[] (moviePortraites model),
-            button [onClick Reset ] [ text "Reset Gallery" ]
+            Grid.container [] [
+                Grid.row [](moviePortraites model),
+            --div[] [ button [onClick ShowDialog ] [ text "Add movie preferences" ]  ],
+                button [onClick Reset ] [ text "Reset Gallery" ]
         ]
     ]              
