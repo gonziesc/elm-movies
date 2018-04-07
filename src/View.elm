@@ -7,14 +7,28 @@ import Models exposing(..)
 import Html.Attributes exposing(..)
 import Components.MoviePortrait exposing (..)
 import Components.PreferencesModal exposing (..)
+import Bootstrap.CDN as CDN
+import Bootstrap.Grid as Grid
+
+navbar : Html Msg
+navbar = 
+    nav[class "navbar navbar-dark bg-dark" ]
+    [
+        a [ class "navbar-brand", href "#" ] [ text "PdeP-Flix" ],
+        input [ placeholder "filter movies", onInput FilterName ] []
+    ]
 
 view : Model -> Html Msg
 view model =
-  div [Styles.mainPage] [
-      preferencesModal model,
-      div[Styles.grandTitle] [text ("PdeP-Flix")]
-    , div[Styles.gallery] [input [ placeholder "filter movies", onInput FilterName ] []
-    , button [ Styles.resetBtn, onClick ShowDialog ] [ text "Add movie preferences" ]]
-    , div[Styles.gallery] (moviePortraites model)
-    , button [ Styles.resetBtn, onClick Reset ] [ text "Reset Gallery" ]
-  ]
+    div []  [
+            CDN.stylesheet,
+            navbar,
+            Grid.container [] [
+            preferencesModal model,
+            div[] [
+                button [onClick ShowDialog ] [ text "Add movie preferences" ]
+            ],
+            div[] (moviePortraites model),
+            button [onClick Reset ] [ text "Reset Gallery" ]
+        ]
+    ]              

@@ -3,6 +3,13 @@ module Styles exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
+navbar =
+  style
+    [ ("background-color", "#000"),
+      ("width", "100%"),
+      ("height", "25px")
+    ]
+
 mainPage =
   style
     [ ("background-color", "#FFFFE0")
