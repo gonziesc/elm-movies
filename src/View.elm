@@ -9,13 +9,17 @@ import Components.MoviePortrait exposing (..)
 import Components.PreferencesModal exposing (..)
 import Bootstrap.CDN as CDN
 import Bootstrap.Grid as Grid
+import Bootstrap.Form as Form
+import Bootstrap.Form.Input as Input
 
 navbar : Html Msg
 navbar = 
     nav[class "navbar navbar-dark bg-dark" ]
     [
         a [ class "navbar-brand", href "#" ] [ text "PdeP-Flix" ],
-        input [ placeholder "filter movies", onInput FilterName ] []
+        Form.formInline [] [
+            Input.text [ Input.attrs [class "mx-sm-3", placeholder "filter movies", onInput FilterName ]] 
+        ]
     ]
 
 view : Model -> Html Msg
