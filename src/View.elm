@@ -2,28 +2,16 @@ module View exposing(..)
 import Styles exposing (..)
 import Msg exposing(..)
 import Html exposing (..)
-import Html.Events exposing (onClick, onInput)
+import Html.Events exposing (onClick)
 import Models exposing(..)
 import Html.Attributes exposing(..)
 import Components.MoviePortrait exposing (..)
 import Components.PreferencesModal exposing (..)
+import Components.Navbar exposing (..)
 import Bootstrap.CDN as CDN
 import Bootstrap.Grid as Grid
-import Bootstrap.Form as Form
-import Bootstrap.Form.Input as Input
 import Bootstrap.Button as Button
 import Bootstrap.Utilities.Spacing as Spacing
-
-navbar : Html Msg
-navbar = 
-    nav[class "navbar navbar-dark bg-dark" ]
-    [
-        a [ class "navbar-brand", href "#" ] [ text "PdeP-Flix" ],
-        Form.formInline [] [
-            Input.text [ Input.attrs [class "mx-sm-3", placeholder "filter movies", onInput FilterName ]] 
-        ]
-    ]
-
 
 
 view : Model -> Html Msg
