@@ -17,7 +17,7 @@ import Bootstrap.Utilities.Spacing as Spacing
 view : Model -> Html Msg
 view model =
   div []  [
-    CDN.stylesheet
+    CDN.stylesheet,
     navbar,
     preferencesModal model,
     Grid.container [] [
