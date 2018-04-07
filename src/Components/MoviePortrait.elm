@@ -10,6 +10,7 @@ import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
 import Bootstrap.Grid.Row as Row 
 import Bootstrap.Button as Button
+import Bootstrap.Badge as Badge
 
 
 moviePortrait : Movie -> Grid.Column Msg
@@ -17,8 +18,8 @@ moviePortrait movie =
 
     Grid.col [] [
           a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
-        , div [Styles.title] [text (movie.title)]
-        , div [] [text ("Rating: " ++ toString(movie.rating))]
+        , div [] [ h4 [] [ text (movie.title ++ " "), Badge.badgeSuccess [] [ text(toString(movie.rating))]]]
+ --       , div [] [text ("Rating: " ++ toString(movie.rating))]
         , div [] [text ("Likes: " ++ toString(movie.likes))]
         , div [] [text ("Match Percentage: " ++ toString(movie.matchPercentage))]
         , Button.linkButton [ Button.outlineDanger, Button.attrs [ onClick <| IncrementLikes movie.id ]] [ text "❤️" ]
