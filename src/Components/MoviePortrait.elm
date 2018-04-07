@@ -9,6 +9,7 @@ import Image exposing (Image)
 import Bootstrap.Grid as Grid
 import Bootstrap.Grid.Col as Col
 import Bootstrap.Grid.Row as Row 
+import Bootstrap.Button as Button
 
 
 moviePortrait : Movie -> Grid.Column Msg
@@ -20,7 +21,7 @@ moviePortrait movie =
         , div [] [text ("Rating: " ++ toString(movie.rating))]
         , div [] [text ("Likes: " ++ toString(movie.likes))]
         , div [] [text ("Match Percentage: " ++ toString(movie.matchPercentage))]
-        , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
+        , Button.linkButton [ Button.outlineDanger, Button.attrs [ onClick <| IncrementLikes movie.id ]] [ text "❤️" ]
     ]
   
 
