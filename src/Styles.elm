@@ -69,6 +69,4 @@ poster =
 title =
   style
     [ ("font-size", "30px")
-    , ("font-style", "oblique")
-    , ("margin-bottom", "5px")
-    , ("font-family", "Comic Sans MS") ]
+    , ("margin-bottom", "5px")]

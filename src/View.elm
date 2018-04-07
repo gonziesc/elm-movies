@@ -29,6 +29,7 @@ view model =
             navbar,
             preferencesModal model,
             Grid.container [] [
+            br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
                 Grid.row [](moviePortraites model),
             --div[] [ button [onClick ShowDialog ] [ text "Add movie preferences" ]  ],
                 button [onClick Reset ] [ text "Reset Gallery" ]

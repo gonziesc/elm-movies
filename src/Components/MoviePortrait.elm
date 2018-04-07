@@ -16,10 +16,10 @@ moviePortrait movie =
 
     Grid.col [] [
           a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
-        , div [] [text (movie.title)]
-        , div [] [text (toString(movie.rating))]
-        , div [] [text (toString(movie.likes))]
-        , div [] [text (toString(movie.matchPercentage))]
+        , div [Styles.title] [text (movie.title)]
+        , div [] [text ("Rating: " ++ toString(movie.rating))]
+        , div [] [text ("Likes: " ++ toString(movie.likes))]
+        , div [] [text ("Match Percentage: " ++ toString(movie.matchPercentage))]
         , button [ onClick <| IncrementLikes movie.id ] [ text "♡" ]
     ]
   
