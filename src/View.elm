@@ -32,6 +32,7 @@ view model =
         [ input [ type_ "checkbox", onClick KidsFilter ] []
         , text "Kids protection"
         ]],
+    Button.button [ Button.success , Button.attrs [onClick OrderByRating]] [ text "order by rating" ],
     Grid.container [] [
       br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
       Grid.row [](moviePortraites model),

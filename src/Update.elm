@@ -32,3 +32,5 @@ update msg model =
      {model | movies = filterMoviesByGenre newGenre model.movies, genre = newGenre}
     KidsFilter ->
      {model | movies = kidsFilter (not model.kidsProtection) moviesCollection, kidsProtection = not model.kidsProtection}
+    OrderByRating ->
+      {model | movies = orderByRating model.movies}

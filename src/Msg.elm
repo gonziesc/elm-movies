@@ -12,3 +12,4 @@ type Msg = NoOp
     | MatchPercentage
     | ChangeGenre String
     | KidsFilter
+    | OrderByRating
