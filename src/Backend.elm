@@ -4,6 +4,9 @@ import Models exposing(Movie, Preferences)
 filterMoviesByName : String -> List Movie -> List Movie
 filterMoviesByName phrase = List.filter(\movie -> String.contains phrase movie.title)
 
+filterMoviesByGenre : String -> List Movie -> List Movie
+filterMoviesByGenre genre = List.filter(\movie -> List.member(genre) movie.genre)
+
 incrementLikes : Int -> List Movie -> List Movie
 incrementLikes id = List.map(\movie -> if movie.id == id then addLike movie else movie)
 

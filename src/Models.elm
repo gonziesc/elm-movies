@@ -23,7 +23,7 @@ type alias Preferences = {
   favoriteActor: String
 }
 
-type alias Model = {movies : List Movie, shouldShowDialog: Bool, preferences: Preferences}
+type alias Model = {movies : List Movie, shouldShowDialog: Bool, preferences: Preferences, genre: String}
 
 
 --MOVIES
@@ -47,4 +47,4 @@ createPoster : String -> Image
 createPoster imageUrl = { url= imageUrl, width= 400, height= 400 }
 
 initialModel : Model
-initialModel = { movies = moviesCollection, shouldShowDialog = False, preferences = Preferences "" "" "" }
+initialModel = { movies = moviesCollection, shouldShowDialog = False, preferences = Preferences "" "" "", genre = "" }

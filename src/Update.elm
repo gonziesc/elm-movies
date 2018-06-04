@@ -28,3 +28,5 @@ update msg model =
       {model | preferences =  Preferences model.preferences.keywords model.preferences.genre actor }
     MatchPercentage ->
      {model | movies = calculateMatchPercentage model.movies model.preferences}
+    ChangeGenre newGenre ->
+     {model | movies = filterMoviesByGenre newGenre model.movies, genre = newGenre}

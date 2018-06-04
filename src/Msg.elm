@@ -1,5 +1,4 @@
 module Msg exposing(..)
-import Models exposing (..)
 
 type Msg = NoOp
     | Reset
@@ -11,3 +10,4 @@ type Msg = NoOp
     | UpdatePreferencesGenre String
     | UpdatePreferencesActor String
     | MatchPercentage
+    | ChangeGenre String
