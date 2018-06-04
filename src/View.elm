@@ -25,9 +25,13 @@ view model =
     preferencesModal model,
         div []
         [ h2 [] [ text "Elija su genero" ]
-        , select [onInput ChangeGenre] (List.map genreOption ["terror", "suspenso"])
-        , div [] [ text <| "Selected: " ++ (toString model.genre) ]
+        , select [onInput ChangeGenre] (List.map genreOption ["", "terror", "suspenso"])
         ],
+          fieldset []
+    [ label []
+        [ input [ type_ "checkbox", onClick KidsFilter ] []
+        , text "Kids protection"
+        ]],
     Grid.container [] [
       br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
       Grid.row [](moviePortraites model),

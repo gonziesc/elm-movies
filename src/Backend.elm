@@ -15,3 +15,5 @@ addLike movie = {movie | likes = movie.likes + 1}
 
 calculateMatchPercentage : List Movie -> Preferences ->  List Movie 
 calculateMatchPercentage movies preferences = List.map(\movie -> {movie | matchPercentage =  String.length (preferences.keywords)}) movies
+
+kidsFilter boolean movies = if boolean then List.filter(\movie -> movie.forKids) movies else movies

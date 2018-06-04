@@ -11,3 +11,4 @@ type Msg = NoOp
     | UpdatePreferencesActor String
     | MatchPercentage
     | ChangeGenre String
+    | KidsFilter
