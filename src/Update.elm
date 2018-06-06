@@ -27,7 +27,7 @@ update msg model =
     UpdatePreferencesActor actor->
       {model | preferences =  Preferences model.preferences.keywords model.preferences.genre actor }
     MatchPercentage ->
-     {model | movies = calculateMatchPercentage model.movies model.preferences}
+     {model | movies = calculateMatchPercentage model.movies model.preferences, shouldShowDialog = False}
     ChangeGenre newGenre ->
      {model | movies = filterMoviesByGenre newGenre model.movies, genre = newGenre}
     KidsFilter ->

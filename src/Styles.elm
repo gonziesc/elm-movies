@@ -3,14 +3,11 @@ module Styles exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 
-mainPage =
+modal =
   style
     [ ("background-color", "#FFFFE0")
-    , ("display", "flex")
-    , ("flex-flow", "column wrap")
-    , ("padding", "100px 50px")
-    , ("align-items", "center")
-    , ("height", "100%") ]
+    , ("margin", "auto")
+    , ("align-items", "center") ]
 
 removeBtn =
   style
