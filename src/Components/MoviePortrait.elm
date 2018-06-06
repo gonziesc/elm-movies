@@ -16,7 +16,7 @@ import Bootstrap.Badge as Badge
 moviePortrait : Movie -> Grid.Column Msg
 moviePortrait movie =
   Grid.col [] [
-    div [Styles.portraitWrapper] [
+    div [Styles.portrait] [
         a [href movie.link] [Image.viewImg [Styles.poster] movie.poster]
         , div [] [ h4 [] [ text (movie.title ++ " "), Badge.badgeSuccess [] [ text(toString(movie.rating))]]]
         , div [] [text ("Likes: " ++ toString(movie.likes))]
