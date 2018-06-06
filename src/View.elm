@@ -11,11 +11,9 @@ import Components.Navbar exposing (..)
 import Bootstrap.CDN as CDN
 import Bootstrap.Grid as Grid
 import Bootstrap.Button as Button
+import Bootstrap.ButtonGroup as ButtonGroup
 import Bootstrap.Utilities.Spacing as Spacing
 
-
-genreOption genre =
-    option [ value genre ] [ text genre ]
 
 view : Model -> Html Msg
 view model =
@@ -23,24 +21,21 @@ view model =
     CDN.stylesheet,
     navbar,
     preferencesModal model,
-        div []
-        [ h2 [] [ text "Elija su genero" ]
-        , select [onInput ChangeGenre] (List.map genreOption ["", "terror", "suspenso"])
-        ],
-          fieldset []
-    [ label []
-        [ input [ type_ "checkbox", onClick KidsFilter ] []
-        , text "Kids protection"
-        ]],
-    Button.button [ Button.success , Button.attrs [onClick OrderByRating]] [ text "order by rating" ],
     Grid.container [] [
-      br [] [], -- ranciada para no poner un margin => TO DO: poner un margin
-      Grid.row [](moviePortraites model),
       br [] [],
-      div [] [
-        Button.button [ Button.success , Button.attrs [onClick Reset]] [ text "Reset Gallery" ],
-        Button.button [ Button.success, Button.attrs [ Spacing.ml1, onClick ShowDialog ] ] [ text "Add movie preferences" ]
-      ]
+      Grid.row [] [
+        Grid.col [] [
+          ButtonGroup.buttonGroup  []
+          [    
+            ButtonGroup.button [ Button.success , Button.attrs [onClick OrderByRating]] [ text "Order" ],
+            ButtonGroup.button [ Button.success , Button.attrs [onClick Reset]] [ text "Reset" ],
+            ButtonGroup.button [ Button.success, Button.attrs [ onClick ShowDialog ] ] [ text "Preferences" ]
+          ]
+          
+          ]
+      ],
+          br [] [],
+      Grid.row [](moviePortraites model)
     ]
 
   ]

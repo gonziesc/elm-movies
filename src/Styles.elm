@@ -66,3 +66,11 @@ likeButton =
     [ ("margin-top", "5px"),
     ("text-align", "center")
     ]
+navbarText =
+  style
+  [("color", "white")]
+portraitWrapper =
+  style
+  [("margin","auto"),
+  ("width", "250px")
+  ]

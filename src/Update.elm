@@ -30,7 +30,7 @@ update msg model =
      {model | movies = calculateMatchPercentage model.movies model.preferences, shouldShowDialog = False}
     ChangeGenre newGenre ->
      {model | movies = filterMoviesByGenre newGenre model.movies, genre = newGenre}
-    KidsFilter ->
+    KidsFilter _ ->
      {model | movies = kidsFilter (not model.kidsProtection) moviesCollection, kidsProtection = not model.kidsProtection}
     OrderByRating ->
       {model | movies = orderByRating model.movies}
